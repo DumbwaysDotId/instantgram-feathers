@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mysql": "mysql://root:@localhost:3306/instantgram_feathers",
+  "authentication": {
+    "secret": "2c30a14cd3455d59be90212be2a5c0726ec4069393633c7df56d618b8597d68c1afa7793a0ec62eaeff57711c1b483f4efbfcd825b8ff21b37ffebe46511b3969ebf8171ef78faa0000658a6817b279339bac4929eb58c760d3bce9f1cb6cf1f5d755071a3e0d85c9651a2d5e8a40664f668d0c7181e6b26c07558215f7278e561b4159701038ce4a5b53994d26c6f0be8586fb879bbfd96024d97c5227befbe36d02a8b1b5f204d845de8441c6091b76ffd93cdcaab5031663381dd96b922f98538ec7d7452cf872368a18067bf8d74a1d98f6b35ae209bd7b158833f7098529085753053a532091fad6e4b4124b76671faaf836bf0c297f89012347306b4ec",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}
