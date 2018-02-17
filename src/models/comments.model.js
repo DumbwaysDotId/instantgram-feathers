@@ -38,6 +38,8 @@ module.exports = function (app) {
   comments.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
+
+    models.comments.belongsTo(models.posts, {foreignKey: 'postId', targetKey: 'id', as: 'post'});
   };
 
   return comments;
