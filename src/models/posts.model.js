@@ -43,6 +43,8 @@ module.exports = function (app) {
   posts.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
+
+    models.posts.hasMany(models.comments, {foreignKey: 'postId', targetKey: 'id', as: 'comments'});
   };
 
   return posts;
